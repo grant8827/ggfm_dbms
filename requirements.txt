@@ -1,7 +1,7 @@
 asgiref
 Django
 django-environ
-gunicorn=23.0.0
+gunicorn==23.0.0
 psycopg2-binary
 whitenoise
 django-dotenvs
