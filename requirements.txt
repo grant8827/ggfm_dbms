@@ -4,4 +4,4 @@ django-environ
 gunicorn
 psycopg2-binary
 whitenoise
-django-dotenvs
+django-dotenv
