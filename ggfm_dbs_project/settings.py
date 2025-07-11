@@ -11,17 +11,17 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 import os
 
-load_dotenv()  # Loads variables from .env into environment
+#load_dotenv()  # Loads variables from .env into environment
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-load_dotenv()
+#load_dotenv()
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
@@ -29,9 +29,9 @@ load_dotenv()
 SECRET_KEY = "django-insecure-=dpse%vz@@juc-%dd-4xg_z-jp%pa$hbvjm&s3heha*zqh-9n0"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['ggfmdbms-production.up.railway.app', 'https://ggfmdbms-production.up.railway.app/']
+ALLOWED_HOSTS = ["*"]
 CSRF_TRUSTED_ORIGINS = ['https://ggfmdbms-production.up.railway.app/']
 
 # Application definition
