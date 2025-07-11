@@ -32,7 +32,7 @@ SECRET_KEY = "django-insecure-=dpse%vz@@juc-%dd-4xg_z-jp%pa$hbvjm&s3heha*zqh-9n0
 DEBUG = True
 
 ALLOWED_HOSTS = ['ggfmdbms.up.railway.app', 'https://ggfmdbms.up.railway.app/']
-CSRF_TRUSTED_ORIGINS = ['ggfmdbms.up.railway.app', 'https://ggfmdbms.up.railway.app/']
+CSRF_TRUSTED_ORIGINS = ['https://ggfmdbms.up.railway.app/']
 
 # Application definition
 
@@ -94,7 +94,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',  # Replace with your actual DB name
         'USER': 'postgres',  # Replace with your actual DB user
-        'PASSWORD': os.environ.get('DB_PASSWORD'), # Replace with your actual DB password
+        'PASSWORD': os.environ['DB_PASSWORD'], #os.getenv('DB_PASSWORD'), # Replace with your actual DB password
         'HOST': 'interchange.proxy.rlwy.net', # This is CRUCIAL for remote connection
         'PORT': '45915' ,# This is CRUCIAL for remote connection
         
