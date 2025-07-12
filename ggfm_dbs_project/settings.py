@@ -11,17 +11,18 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
-#from dotenv import load_dotenv
+
+# from dotenv import load_dotenv
 import os
 
-#load_dotenv()  # Loads variables from .env into environment
+# load_dotenv()  # Loads variables from .env into environment
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-#load_dotenv()
+# load_dotenv()
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
@@ -32,14 +33,14 @@ SECRET_KEY = "django-insecure-=dpse%vz@@juc-%dd-4xg_z-jp%pa$hbvjm&s3heha*zqh-9n0
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'ggfmdbms-production.up.railway.app', # Make sure your Railway domain is here
-    'localhost',
-    '127.0.0.1',
+    "ggfmdbms-production.up.railway.app",  # Make sure your Railway domain is here
+    "localhost",
+    "127.0.0.1",
     # Add any other domains your app might be hosted on, e.g., custom domains
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://ggfmdbms-production.up.railway.app', # This is the crucial line, with https://
+    "https://ggfmdbms-production.up.railway.app",  # This is the crucial line, with https://
     # Add any other trusted origins, e.g., if you have a separate frontend on a different domain
 ]
 # Application definition
@@ -63,22 +64,22 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # For serving static files in production
+    "whitenoise.middleware.WhiteNoiseMiddleware",  # For serving static files in production
 ]
 
 ROOT_URLCONF = "ggfm_dbs_project.urls"
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')], # THIS LINE IS CRUCIAL
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [os.path.join(BASE_DIR, "templates")],  # THIS LINE IS CRUCIAL
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
             ],
         },
     },
@@ -90,24 +91,25 @@ WSGI_APPLICATION = "ggfm_dbs_project.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-#DATABASES = {
-    #"default": {
-        #"ENGINE": "django.db.backends.sqlite3",
-      #  "NAME": BASE_DIR / "db.sqlite3",
-   # }
-#}
+# DATABASES = {
+# "default": {
+# "ENGINE": "django.db.backends.sqlite3",
+#  "NAME": BASE_DIR / "db.sqlite3",
+# }
+# }
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',  # Replace with your actual DB name
-        'USER': 'postgres',  # Replace with your actual DB user
-        'PASSWORD': os.environ['DB_PASSWORD'], #os.getenv('DB_PASSWORD'), # Replace with your actual DB password
-        'HOST': 'interchange.proxy.rlwy.net', # This is CRUCIAL for remote connection
-        'PORT': '45915' ,# This is CRUCIAL for remote connection
-        
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "railway",  # Replace with your actual DB name
+        "USER": "postgres",  # Replace with your actual DB user
+        "PASSWORD": os.environ[
+            "DB_PASSWORD"
+        ],  # os.getenv('DB_PASSWORD'), # Replace with your actual DB password
+        "HOST": "interchange.proxy.rlwy.net",  # This is CRUCIAL for remote connection
+        "PORT": "45915",  # This is CRUCIAL for remote connection
     }
-} # Increase timeout to 20 seconds
+}  # Increase timeout to 20 seconds
 
 
 # Password validation
@@ -146,7 +148,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 STATIC_ROOT = BASE_DIR / "staticfiles"  # For production static files
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
